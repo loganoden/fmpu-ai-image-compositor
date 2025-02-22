@@ -27,7 +27,7 @@ pip install onnxruntime
 ## Project Structure
 
 ```
-background-remover/
+FMPU/
 │
 ├── remove_background.py    # Main script for background removal
 ├── README.md              # Project documentation

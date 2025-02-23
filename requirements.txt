@@ -1,0 +1,9 @@
+Pillow
+rembg
+diffusers
+torch
+os
+cuda
+tokenizer
+transformers
+requests

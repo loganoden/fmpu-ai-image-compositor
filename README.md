@@ -29,7 +29,7 @@ pip install onnxruntime
 ```
 FMPU/
 │
-├── remove_background.py    # Main script for background removal
+├── FMPU.py    # Main script
 ├── README.md              # Project documentation
 └── requirements.txt       # List of Python dependencies
 ```

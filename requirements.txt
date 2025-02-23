@@ -1,9 +1,10 @@
 Pillow
 rembg
 diffusers
-torch
-os
-cuda
+torch --index-url https://download.pytorch.org/whl/cu118
+cuda-python
 tokenizer
 transformers
 requests
+onnxruntime
+accelerate

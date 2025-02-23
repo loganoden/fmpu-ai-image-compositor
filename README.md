@@ -9,7 +9,7 @@ A Python-based image modification software, developed for Hack AI 2025.
 
 ## Prerequisites
 
-Before running this project, make sure you have Python installed on your system. This project was developed with Python 3.x.
+Before running this project, make sure you have Python installed on your system. This project was developed with Python 3.13
 
 ## Installation
 

@@ -3,11 +3,9 @@
 A Python-based image modification software, developed for Hack AI 2025.
 
 ## Features
-
-- Removes backgrounds from images using deep learning
-- Supports common image formats (PNG, JPG, JPEG)
-- Preserves transparency in output images
-- Can process both single images and entire directories
+- Extracts subject from image using rembg (which utilizes Alpha Matting)
+- Creates background image using Stable Diffusion v1-5
+- Composes final image using Pillow
 
 ## Prerequisites
 

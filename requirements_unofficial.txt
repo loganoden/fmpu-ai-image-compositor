@@ -1,7 +1,0 @@
-## Requirements
-
-- `rembg`: For background removal using deep learning
-- `Pillow`: For image processing
-- `onnxruntime`: Required by rembg for model inference
-- `numpy`: Required for image manipulation
-- `python-opencv` (optional): For alternative implementation

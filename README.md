@@ -3,8 +3,8 @@
 A Python-based image modification software, developed for Hack AI 2025.
 
 ## Features
-- Extracts subject from image using rembg (which utilizes Alpha Matting)
-- Creates background image using Stable Diffusion v1-5
+- Removes background from an input image using rembg (which utilizes Alpha Matting)
+- Generates background image using Stable Diffusion v1-5
 - Composes final image using Pillow
 
 ## Prerequisites
@@ -17,9 +17,7 @@ Before running this project, make sure you have Python installed on your system.
 
 2. Install the required dependencies using pip:
 ```bash
-pip install rembg
-pip install Pillow
-pip install onnxruntime
+pip install -r requirements.txt
 ```
 
 ## Project Structure
@@ -38,7 +36,6 @@ FMPU/
 - `Pillow`: For image processing
 - `onnxruntime`: Required by rembg for model inference
 - `numpy`: Required for image manipulation
-- `python-opencv` (optional): For alternative implementation
 
 ## Troubleshooting
 

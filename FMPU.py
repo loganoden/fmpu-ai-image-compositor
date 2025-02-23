@@ -81,8 +81,8 @@ def create_composite(input_image_path, background_prompt, output_path):
 
 if __name__ == "__main__":
     # Example usage
-    input_image = "Inputs//Jack1.jpg"  # Your input image with subject
-    background_prompt = "diddys yacht"  # Customize background prompt
-    output_image = "Outputs//Jack1_Output2.jpg"
+    input_image = "test_input.jpg"  # Your input image with subject
+    background_prompt = "Ohio State Buckeyes"  # Customize background prompt
+    output_image = "test_output.jpg" # Output image
     
     create_composite(input_image, background_prompt, output_image)

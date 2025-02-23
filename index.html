@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take a Picture with Webcam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 20px;
+        }
+        video {
+            border: 1px solid #b62626;
+            margin-bottom: 10px;
+        }
+        canvas {
+            display: none; /* Hide the canvas initially */
+        }
+        button {
+            margin-top: 10px;
+        }
+        #capturedImage {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Take a Picture with Your Webcam</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <br>
+    <button id="capture">Capture</button>
+    <br><br>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <br>
+    <h2>Captured Picture:</h2>
+    <img id="capturedImage" src="" alt="Captured Image">
+
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const capturedImage = document.getElementById('capturedImage');
+        const captureButton = document.getElementById('capture');
+        const context = canvas.getContext('2d');
+
+        // Start video stream
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                video.srcObject = stream;
+            })
+            .catch((error) => {
+                console.log('Error accessing webcam: ', error);
+            });
+
+        // Capture picture when the "Capture" button is clicked
+        captureButton.addEventListener('click', () => {
+            // Draw the current frame from the video onto the canvas
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Convert the canvas to a data URL (base64 image)
+            const imageData = canvas.toDataURL('image/png');
+
+            // Send the image to the backend (Flask) for processing
+            fetch('http://127.0.0.1:5000/process-image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ image: imageData })  // Send the base64 image
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the processed image returned from the backend
+                capturedImage.src = data.processed_image_url;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

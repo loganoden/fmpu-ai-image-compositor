@@ -8,3 +8,4 @@ transformers
 requests
 onnxruntime
 accelerate
+flask

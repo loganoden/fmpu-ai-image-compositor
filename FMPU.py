@@ -2,7 +2,7 @@ from PIL import Image
 from rembg import remove
 from diffusers import DiffusionPipeline
 import torch
-import os
+import os, sys
 
 def generate_background(prompt):
     """
@@ -73,15 +73,24 @@ def create_composite(input_image_path, background_prompt, output_path):
             return
             
         # Save result
-        result.save(output_path, format='PNG')
-        print(f"Composite image saved successfully at: {output_path}")
+        #result.save(output_path, format='PNG')
+        #print(f"Composite image saved successfully at: {output_path}")
+
+        return result
         
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
+def fmpu(img, prompt):
+    input_image = img  # Your input image with subject
+    background_prompt = "Ohio State Buckeyes"  # Customize background prompt
+    output_image = "test_output.jpg" # Output image
+    
+    return create_composite(input_image, background_prompt, output_image)
+
 if __name__ == "__main__":
     # Example usage
-    input_image = "test_input.jpg"  # Your input image with subject
+    input_image = sys.argv[1]  # Your input image with subject
     background_prompt = "Ohio State Buckeyes"  # Customize background prompt
     output_image = "test_output.jpg" # Output image
     

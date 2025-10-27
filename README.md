@@ -1,55 +1,36 @@
-# FMPU
+# FMPU: AI Image Compositor
 
-A Python-based image modification software, developed for Hack AI 2025.
+**Event:** HackAI 2025  
+**Languages and Tools:** Python · Stable Diffusion · rembg · Pillow · Torch  
 
-## Features
-- Removes background from an input image using rembg (which utilizes Alpha Matting)
-- Generates background image using Stable Diffusion v1-5
-- Composes final image using Pillow
+---
 
-## Prerequisites
+## 📄 Overview
+**FMPU** (Fast Modular Photo Upgrader) is a Python-based image compositor that removes the background from an input image, generates a new background using **Stable Diffusion v1-5**, and merges them into a single composite image.  
+The project was developed during **HackAI 2025** to explore creative applications of generative AI in image editing and personalization.
 
-Before running this project, make sure you have Python installed on your system. This project was developed with Python 3.13
+---
 
-## Installation
+## ⚙️ Features
+- Removes image backgrounds using **rembg** (deep learning–based alpha matting)  
+- Generates new background images from text prompts using **Stable Diffusion v1-5**  
+- Composes foreground and background using **Pillow**, ensuring high-resolution blending  
+- Includes exception handling for file paths, missing inputs, and inference errors  
 
-1. Clone this repository or download the source code.
+---
 
-2. Install the required dependencies using pip:
-```bash
-pip install -r requirements.txt
-```
+## 🧠 Technologies Used
+- **Python** – core development language  
+- **rembg** – deep learning–based background removal  
+- **diffusers (Stable Diffusion v1-5)** – background generation  
+- **Pillow (PIL)** – image processing and composition  
+- **Torch** – model inference backend  
 
-## Project Structure
+---
 
-```
-FMPU/
-│
-├── FMPU.py    # Main script
-├── README.md              # Project documentation
-└── requirements.txt       # List of Python dependencies
-```
+## 🚀 Installation
 
-## Dependencies
-
-- `rembg`: For background removal using deep learning
-- `Pillow`: For image processing
-- `onnxruntime`: Required by rembg for model inference
-- `numpy`: Required for image manipulation
-
-## Troubleshooting
-
-Common issues and their solutions:
-
-1. **File Not Found Error**:
-   - Ensure the input image is in the same directory as the script
-   - Check if the filename matches exactly (case-sensitive)
-   - Verify you're running the script from the correct directory
-
-2. **Module Not Found Errors**:
-   - Make sure all required packages are installed using pip
-   - If using a virtual environment, ensure it's activated
-
-## Contributing
-
-This project was created for Hack AI 2025.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/fmpu-ai-image-compositor.git
+   cd fmpu-ai-image-compositor
